@@ -1,0 +1,59 @@
+@-webkit-keyframes ringed {
+    0% {
+      -webkit-transform: rotate(0deg) translateY(-22px);
+              transform: rotate(0deg) translateY(-22px);
+    }
+    100% {
+      -webkit-transform: rotate(360deg) translateY(-22px);
+              transform: rotate(360deg) translateY(-22px);
+    }
+  }
+  
+  @keyframes ringed {
+    0% {
+      -webkit-transform: rotate(0deg) translateY(-22px);
+              transform: rotate(0deg) translateY(-22px);
+    }
+    100% {
+      -webkit-transform: rotate(360deg) translateY(-22px);
+              transform: rotate(360deg) translateY(-22px);
+    }
+  }
+  
+  .ringed:after, .ringed:before {
+    border-radius: 100%;
+    content: '';
+    position: absolute;
+  }
+  
+  .ringed:after {
+    -webkit-animation: ringed 3s linear both; /* Ändern Sie die Dauer auf 3 Sekunden */
+            animation: ringed 3s linear both; /* Ändern Sie die Dauer auf 3 Sekunden */
+    background: var(--secondary);
+    height: 16px;
+    -webkit-transform: rotate(0deg) translateY(-22px);
+            transform: rotate(0deg) translateY(-22px);
+    width: 18px;
+    left: 32px;
+    top: 95px;
+  }
+  
+  .ringed:before {
+    border: 6px solid var(--primary);
+    height: 50px;
+    width: 50px;
+  }
+  
+  :root {
+    --primary: blue;
+    --secondary: orange;
+  }
+  
+  .ringed.finished:after {
+    -webkit-animation: none;
+    animation: none;
+    background: transparent; 
+  }
+  .ringed.finished:before {
+    background: transparent; 
+  }

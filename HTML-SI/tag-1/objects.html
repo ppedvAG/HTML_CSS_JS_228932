@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bla...</title>
+    <script src="/tag-1/objects.js" defer></script>
+    <!--
+        1. Ohne Attribut
+            <script src"..">
+            In diesem Fall wird das JS synchron geladen und ausgeführt, was bedeutet, dass das Parsen des
+            HTML-Dokuments gestoppt wird, während das Skript geladen und ausgeführt wird
+            Dies kann zu einer längeren Seitenaufbauzeit führen insbesondere wenn das Skript
+            groß ist oder sich in der Nähe des </body> Tags befindet
+
+        2. "async" Attribut
+            <script src"..." async>
+            Wenn das async Attribut hinzugefügt wird, wird das Skript asynchron geladen und ausgeführt
+            Das bedeutet, dass das Laden und Ausführen des Skripts parallel zum Parsen des 
+            HTML-Dokuments erfolgt, ohne das Parsen des Dokuments zu blockieren.
+            Die Reihenfolge, in der die Skripte ausgeführt werden, kann jedoch nicht garantiert
+            werden. Das Skript wird ausgeführt, sobald es verfügbar ist, ohne auf andere 
+            Ressourcen zu warten.
+
+        3. "defer" Attribut
+            <script src".." defer>
+            Das wird ebenfalss asynchron geladen
+            Der entscheidende Unterschied besteht darin, dass das Skript erst nach Abschluss des Parsens
+            des HTML-Dokuments ausgeführt wird, in der es im HTML-Dokument erscheint.
+            Dies is nützlich, wenn das Skript auf bestimmte DOM-Elemente zugreift, da Sie sicher sein können,
+            dass das DOM zu diesem Zeitpunkt vollständig geladen ist.
+
+    -->
+</head>
+<body>
+    <h1>Test</h1>
+    <h2>Test2</h2>
+    <h3>Test3</h3>    
+</body>
+</html>
